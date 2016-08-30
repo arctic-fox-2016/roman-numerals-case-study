@@ -1,6 +1,14 @@
+
 setelah melakukan komparasi antara keempat alternatif solusi,
-kami menyimpulkan pada solusi ke 4, ada kesalahan pada beberapa isi dari var roman  yaitu
+
+kami menemukan pada solusi pertama ada range validasi angka dimana angka harus diantara
+0 s.d. 4000
+
+pada solusi kedua ada validasi bahwa inputan harus berupa angka.
+
+Sehingga kami menyimpulkan pada solusi ke 4, ada kesalahan pada beberapa isi dari var roman  yaitu
 - 900 -> CM
+dan sebaiknya ditambah validasi inputan harus berupa angka, dan ada validasi range dari inputan angka yang dimasukkan.
 
 ```javascript
 function to_roman(num){
