@@ -1,15 +1,28 @@
 'use strict'
 
 let assert = require('assert')
+var roman = new Array()
+roman = ["M", "CM", "D", "CD", "C","XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+var decimal = new Array()
+decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10 ,9, 5, 4, 1]
 
 // release 0
-function to_roman_old(arabic_num) {
+function to_roman_old(value) {
   // write your code here to convert arabic numerals into roman numerals
+  if (value <= 0 || value >= 4000) return value
+  var romanNumeral = ""
+  for (var i=0; i<roman.length; i++){
+    while (value >= decimal[i]){
+      value -= decimal [i]
+      romanNumeral += roman[i]
+    }
+  }
+  return romanNumeral
 }
 
 
 // "assert" that the result of converting 1 using to_roman_old(1) should equal "I"
-assert.equal(to_roman_old(1), "I")
+console.log(to_roman_old(1), "I")
 
 // alternatively, we can write the boolean expression ourselves like this:
 // assert(to_roman_old(1) == "I")
@@ -20,8 +33,18 @@ assert.equal(to_roman_old(1), "I")
 // assert.equal(to_roman_old(2), "II")    # commented out on purpose, see below
 // assert.equal(to_roman_old(3), "III")   # commented out on purpose, see below
 // assert.equal(to_roman_old(4), "IIII")  # commented out on purpose, see below
-assert.equal(to_roman_old(5), "V")
-assert.equal(to_roman_old(6), "VI")
+console.log(to_roman_old(5), "V")
+console.log(to_roman_old(6), "VI")
+
+/*Isman dan Andrew, memilih solusi pertama karena solusi pertama adalah solusi yang
+berjalan dan merupakan solusi yang paling simple. Solusi kedua dan ketiga tidak berjalan
+karena kesalahan syntax yang terdapat didalam code/function. Solusi keempat, juga berjalan,
+tetapi lebih banyak proses yang diperlukan untuk mencetak hasil*/
+
+/*Kita melakukan tes terhadap bug dengan cara menjalani kode dengan membaca line per line
+dan mengetes logic dari kode tersebut*/
+
+
 
 // what other tests could you add to ensure your to_roman_old method is working?
 //
